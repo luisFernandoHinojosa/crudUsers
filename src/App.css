@@ -1,0 +1,21 @@
+.font_text{
+    font-family: 'Pathway Extreme', sans-serif;
+}
+
+.word-wrap {
+    word-wrap: break-word;
+    background-color: yellow;
+  }
+
+  .relative label {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.relative input:focus + label,
+.relative input:not(:placeholder-shown) + label {
+    top: -2px;
+    font-size: 12px;
+    color: #333; 
+}
