@@ -116,7 +116,7 @@ function App() {
     }, []);
 
     return (
-        <main className="font_text min-h-screen bg-gray-300">
+        <main className="font_text min-h-screen">
             <Header
                 handleOpenModal={handleOpenModal}
                 users={users}

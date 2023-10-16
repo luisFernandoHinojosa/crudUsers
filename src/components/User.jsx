@@ -7,16 +7,16 @@ export const User = ({
     setUserToDelete,
 }) => {
     return (
-    <article className="relative rounded-lg grid gap-2 overflow-hidden p-1 text-gray-800">
-            <div className="absolute w-full h-full bg-gradient-to-r from-[#36151e] via-[#36151e] to-transparent -top-1/2 -left-1/2 animate-spin-slow origin-bottom-right "></div>
-            <div className="absolute w-full h-full bg-gradient-to-r from-[#36151e] via-[#36151e] to-transparent -top-1/2 -left-1/2 animate-spin-delay origin-bottom-right"></div>
+    <article className="relative rounded-lg grid gap-2 overflow-hidden p-[2px] text-gray-800">
+            <div className="absolute w-full h-full bg-gradient-to-r from-[#0a2472] via-[#0a2472] to-transparent -top-1/2 -left-1/2 animate-spin-slow origin-bottom-right "></div>
+            <div className="absolute w-full h-full bg-gradient-to-r from-[#0a2472] via-[#0a2472] to-transparent -top-1/2 -left-1/2 animate-spin-delay origin-bottom-right"></div>
 
-            <article className=' bg-[#7b6d8d]  rounded-lg z-10 overflow-hidden'>
-                <div className='bg-[#593f62] pt-2 p-4 rounded-b-2xl'>
+            <article className=' bg-white  rounded-lg z-10 overflow-hidden'>
+                <div className=' pt-2 p-4 border-b-2 border-b-[#0a2472] rounded-md'>
                 <img
                         src={user.image_url}
                         alt=""
-                        className="relative w-[200px] left-1/2 -translate-x-1/2 rounded-[50%] transform scale-100 cursor-pointer hover:scale-95 transition-transform z-0 border-4 "
+                        className="relative w-[200px] left-1/2 -translate-x-1/2 rounded-[50%] transform scale-100 cursor-pointer hover:scale-95 transition-transform z-0 "
                     />
 
                 </div>
@@ -40,15 +40,15 @@ export const User = ({
                         </li>
                     </ul>
 
-                    <div className="flex gap-2 justify-center mt-3">
+                    <div className="flex gap-2 justify-end mt-3">
                         <button
-                            className="bg-[#a5c4d4] p-1 hover:bg-yellow-700 transition-colors text-white rounded-lg"
+                            className="bg-[#0e6ba8] p-1 hover:bg-yellow-700 transition-colors text-white rounded-lg"
                             onClick={() => handleClickUpdate(user)}
                         >
                             <IconEdit size={20} />
                         </button>
                         <button
-                            className="bg-[#a5c4d4] p-1 hover:bg-yellow-700 transition-colors text-white rounded-lg"
+                            className="bg-[#0e6ba8] p-1 hover:bg-yellow-700 transition-colors text-white rounded-lg"
                             type="button"
                             onClick={() => {
                                 setConfirmDeleteUser(true),

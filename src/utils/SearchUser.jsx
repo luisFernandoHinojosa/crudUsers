@@ -33,11 +33,11 @@ export const SearchUser = ({users, setFilteredUser, setShowFilteredUser}) => {
             </form>
 
             {userSuggestions.length > 0 && (
-                <ul className="absolute blur-bg text-center w-full font-normal max-h-36 overflow-y-auto text-white">
+                <ul className="absolute blur-bg bg-[#a6e1fa]/40 text-center w-full font-normal max-h-36 overflow-y-auto text-black rounded-t-lg">
                     {userSuggestions.map((user) => (
                         <li
                             key={user.id}
-                            className="cursor-pointer transition-colors hover:bg-[#36151e]"
+                            className="cursor-pointer transition-colors hover:bg-slate-100"
                             onClick={()=>{ setFilteredUser(user),setShowFilteredUser(true)}}
                         >
                             {user.first_name} {user.last_name}

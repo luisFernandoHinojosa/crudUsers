@@ -17,16 +17,16 @@ export const FilteredUser = ({
                     : 'translate-x-full z-20'
             }`}
         >
-            <article className="relative w-[min(100%,_300px)] rounded-lg overflow-hidden border-2 border-[#a5c4d4]">
-                <article className=" bg-[#7b6d8d]  rounded-lg overflow-hidden ">
+            <article className="relative w-[min(100%,_300px)] rounded-lg overflow-hidden border-2 border-[#001c55] bg-white shadow-lg shadow-[#0a2472]">
+                
                     <button
-                        className="absolute text-red-500 top-2 right-2 transition-colors hover:text-red-700"
+                        className="absolute text-[#0a2472] top-2 right-2 transition-colors hover:text-white hover:bg-[#0a2472] rounded-lg"
                         type="button"
                         onClick={() => setShowFilteredUser(false)}
                     >
                         <IconSquareRoundedX />
                     </button>
-                    <div className="bg-[#593f62] pt-2 p-4 rounded-b-2xl">
+                    <div className="pt-2 p-4 border-b-2 border-[#0a2472] rounded-b-lg">
                         <img
                             src={user.image_url}
                             alt=""
@@ -52,15 +52,15 @@ export const FilteredUser = ({
                             </li>
                         </ul>
 
-                        <div className="flex gap-2 justify-center mt-3">
+                        <div className="flex gap-2 justify-end mt-3">
                             <button
-                                className="bg-[#a5c4d4] p-1 hover:bg-yellow-700 transition-colors text-white rounded-lg"
+                                className="bg-[#0e6ba8] p-1 hover:bg-yellow-700 transition-colors text-white rounded-lg"
                                 onClick={() => handleClickUpdate(user)}
                             >
                                 <IconEdit size={20} />
                             </button>
                             <button
-                                className="bg-[#a5c4d4] p-1 hover:bg-yellow-700 transition-colors text-white rounded-lg"
+                                className="bg-[#0e6ba8] p-1 hover:bg-yellow-700 transition-colors text-white rounded-lg"
                                 type="button"
                                 onClick={() => {
                                     setConfirmDeleteUser(true),
@@ -72,7 +72,7 @@ export const FilteredUser = ({
                         </div>
                     </div>
                 </article>
-            </article>
+            
         </section>
     );
 };

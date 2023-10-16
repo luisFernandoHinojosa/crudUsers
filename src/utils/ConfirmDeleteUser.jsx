@@ -16,10 +16,10 @@ export const ConfirmDeleteUser = ({
                     : 'translate-y-full z-20'
             }`}
         >
-            <div className="relative w-[min(100%,_280px)] bg-[#a5c4d4] border-2 border-blue-300 text-center grid gap-1 p-2 rounded-lg">
+            <div className="relative w-[min(100%,_280px)] bg-[#fff]  text-center grid gap-1 p-2 rounded-lg text-black border-2 border-[#0a2472]">
                 <div className="pb-3">
                     <button
-                        className="absolute text-red-500 top-1 right-1 transition-colors hover:text-red-700"
+                        className="absolute text-[#0a2472] top-1 right-1 transition-colors hover:bg-[#0e6ba8] rounded-lg hover:text-white"
                         type="button"
                         onClick={() => setConfirmDeleteUser(false)}
                     >
@@ -27,10 +27,10 @@ export const ConfirmDeleteUser = ({
                     </button>
                 </div>
                 <div>
-                    <p>Seguro que deseas eliminar a este usuario?</p>
+                    <p className='font-medium'>Seguro que deseas eliminar a este usuario?</p>
                 </div>
                 <button
-                    className=" bg-gray-800 p-2 rounded-2xl text-red-500 top-1 right-1 transition-colors hover:bg-gray-700"
+                    className=" bg-[#0e6ba8] text-white p-2 rounded-2xl  top-1 right-1 transition-colors hover:bg-[#0a2472]"
                     type="submit"
                     onClick={() =>{
                         setConfirmDeleteUser(false);
