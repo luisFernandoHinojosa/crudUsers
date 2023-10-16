@@ -19,3 +19,15 @@
     font-size: 12px;
     color: #333; 
 }
+
+.bg-gradient{
+    background-image: linear-gradient(-60deg, #16a085 0%, #f4d03f 100%);
+    background-attachment: fixed; 
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+
+.blur-bg {
+    backdrop-filter: blur(0.2rem); 
+    -webkit-backdrop-filter: blur(0.2rem); 
+}
