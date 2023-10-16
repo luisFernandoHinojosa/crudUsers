@@ -116,7 +116,7 @@ function App() {
     }, []);
 
     return (
-        <main className="font_text min-h-screen bg-gradient">
+        <main className="font_text min-h-screen bg-gray-300">
             <Header
                 handleOpenModal={handleOpenModal}
                 users={users}

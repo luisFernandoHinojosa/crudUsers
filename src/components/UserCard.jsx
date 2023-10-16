@@ -18,13 +18,13 @@ export const UserCard = ({
         >
             <form
                 onSubmit={handleSubmit(submit)}
-                className="relative bg-[#6f7c12] p-3 rounded-md grid gap-4 w-[min(100%,_300px)] border-2 border-green-200"
+                className="relative bg-[#8499b1] p-3 rounded-md grid gap-4 w-[min(100%,_300px)] border-2 border-[#7b6d8d]"
             >
                 <h2 className="text-center font-bold text-2xl">
                     {idToUserEdit ? 'Editar Usuario' : 'Nuevo Usuario'}
                 </h2>
                 <button
-                    className="absolute text-red-500 top-2 right-2 transition-colors hover:text-red-700"
+                    className="absolute text-[#36151e] top-2 right-2 transition-colors hover:text-red-700"
                     type="button"
                     onClick={handleClosedModal}
                 >
@@ -140,7 +140,7 @@ export const UserCard = ({
                 </div>
 
                 <button
-                    className="bg-[#8cff98] text-black p-2 px-4 uppercase font-semibold rounded-2xl transition-colors hover:bg-green-400"
+                    className="bg-[#593f62] text-black p-2 px-4 uppercase font-semibold rounded-2xl transition-colors hover:bg-purple-950 hover:text-white"
                     type="submit"
                 >
                     {idToUserEdit ? 'Guardar Cambios' : 'Agregar Nuevo Usuario'}

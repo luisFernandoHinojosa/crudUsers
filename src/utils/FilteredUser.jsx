@@ -17,8 +17,8 @@ export const FilteredUser = ({
                     : 'translate-x-full z-20'
             }`}
         >
-            <article className="relative w-[min(100%,_300px)] rounded-lg overflow-hidden border-2 border-green-600">
-                <article className=" bg-[#6f7c12]  rounded-lg overflow-hidden ">
+            <article className="relative w-[min(100%,_300px)] rounded-lg overflow-hidden border-2 border-[#a5c4d4]">
+                <article className=" bg-[#7b6d8d]  rounded-lg overflow-hidden ">
                     <button
                         className="absolute text-red-500 top-2 right-2 transition-colors hover:text-red-700"
                         type="button"
@@ -26,7 +26,7 @@ export const FilteredUser = ({
                     >
                         <IconSquareRoundedX />
                     </button>
-                    <div className="bg-purple-100 pt-2 p-4 rounded-b-2xl">
+                    <div className="bg-[#593f62] pt-2 p-4 rounded-b-2xl">
                         <img
                             src={user.image_url}
                             alt=""
@@ -54,13 +54,13 @@ export const FilteredUser = ({
 
                         <div className="flex gap-2 justify-center mt-3">
                             <button
-                                className="bg-[#000] p-1 hover:bg-yellow-700 transition-colors text-white rounded-lg"
+                                className="bg-[#a5c4d4] p-1 hover:bg-yellow-700 transition-colors text-white rounded-lg"
                                 onClick={() => handleClickUpdate(user)}
                             >
                                 <IconEdit size={20} />
                             </button>
                             <button
-                                className="bg-[#000] p-1 hover:bg-yellow-700 transition-colors text-white rounded-lg"
+                                className="bg-[#a5c4d4] p-1 hover:bg-yellow-700 transition-colors text-white rounded-lg"
                                 type="button"
                                 onClick={() => {
                                     setConfirmDeleteUser(true),

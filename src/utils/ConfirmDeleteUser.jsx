@@ -16,7 +16,7 @@ export const ConfirmDeleteUser = ({
                     : 'translate-y-full z-20'
             }`}
         >
-            <div className="relative w-[min(100%,_280px)] bg-[#aad922] border-2 border-blue-300 text-center grid gap-1 p-2 rounded-lg">
+            <div className="relative w-[min(100%,_280px)] bg-[#a5c4d4] border-2 border-blue-300 text-center grid gap-1 p-2 rounded-lg">
                 <div className="pb-3">
                     <button
                         className="absolute text-red-500 top-1 right-1 transition-colors hover:text-red-700"
