@@ -22,22 +22,22 @@ export const SearchUser = ({users, setFilteredUser, setShowFilteredUser}) => {
     };
 
     return (
-        <section className="absolute top-20 left-1/2 -translate-x-1/2 w-[300px] md:top-4 md:w-[400px] z-10">
-            <form className="bg-green-500 h-8 overflow-hidden">
+        <section className="absolute text-black top-20 left-1/2 -translate-x-1/2 w-[300px] md:top-4 md:w-[400px] z-20">
+            <form className="h-8 overflow-hidden rounded-lg">
                 <input
                     type="text"
-                    className="outline-none w-full h-full text-center font-semibold border-2 border-blue-400"
+                    className="outline-none w-full h-full text-center font-semibold bg-slate-100"
                     placeholder="Search name user"
                     onChange={handleInputChange}
                 />
             </form>
 
             {userSuggestions.length > 0 && (
-                <ul className="absolute bg-blue-500/40 text-center w-full font-normal max-h-36 overflow-y-auto">
+                <ul className="absolute blur-bg text-center w-full font-normal max-h-36 overflow-y-auto">
                     {userSuggestions.map((user) => (
                         <li
                             key={user.id}
-                            className="cursor-pointer transition-colors hover:bg-blue-400"
+                            className="cursor-pointer transition-colors hover:bg-blue-200"
                             onClick={()=>{ setFilteredUser(user),setShowFilteredUser(true)}}
                         >
                             {user.first_name} {user.last_name}

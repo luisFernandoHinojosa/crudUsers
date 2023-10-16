@@ -9,19 +9,18 @@ export const UserCard = ({
     idToUserEdit,
     errors,
 }) => {
-    //console.log("Email",emailError)
 
     return (
         <section
-            className={`fixed z-20 bg-slate-400/50 top-0 bottom-0 left-0 right-0 flex justify-center items-center px-3 transition-all ${
-                isShowModal ? 'visible opacity-100' : 'invisible opacity-0'
+            className={`fixed blur-bg top-0 bottom-0 left-0 right-0 flex justify-center items-center px-3 transition-all ${
+                isShowModal ? 'visible opacity-100 z-30' : 'invisible opacity-0'
             }`}
         >
             <form
                 onSubmit={handleSubmit(submit)}
-                className="relative bg-white p-3 rounded-md grid gap-3 w-[min(100%,_300px)]"
+                className="relative bg-[#6f7c12] p-3 rounded-md grid gap-4 w-[min(100%,_300px)] border-2 border-green-200"
             >
-                <h2 className="text-center">
+                <h2 className="text-center font-bold text-2xl">
                     {idToUserEdit ? 'Editar Usuario' : 'Nuevo Usuario'}
                 </h2>
                 <button
@@ -32,14 +31,16 @@ export const UserCard = ({
                     <IconSquareRoundedX />
                 </button>
 
-                <div className="grid gap-1">
-                    <label className="font-light" htmlFor="first_name">
+                <div className="relative grid">
+                    <label className="relative font-light " htmlFor="first_name">
                         Nombre
                     </label>
                     <input
-                        className="outline-none border-2 px-2 py-1 rounded-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-300"
+                        className="outline-none border-2 px-2
+                        py-1 rounded-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-300"
                         type="text"
                         id="first_name"
+                        autoFocus
                         {...register('first_name', {
                             required: {
                                 value: true,
@@ -49,8 +50,8 @@ export const UserCard = ({
                     />
                 </div>
 
-                <div className="grid gap-1">
-                    <label className="font-light" htmlFor="last_name">
+                <div className="relative grid gap-1">
+                    <label className="relative font-light" htmlFor="last_name">
                         Apellidos
                     </label>
                     <input
@@ -61,8 +62,8 @@ export const UserCard = ({
                     />
                 </div>
 
-                <div className="grid gap-1">
-                    <label className="font-light" htmlFor="email">
+                <div className="relative grid gap-1">
+                    <label className="relative font-light" htmlFor="email">
                         Email
                     </label>
                     <input
@@ -83,8 +84,8 @@ export const UserCard = ({
                     )}
                 </div>
 
-                <div className="grid gap-1">
-                    <label className="font-light" htmlFor="password">
+                <div className="relative grid gap-1">
+                    <label className="relative font-light" htmlFor="password">
                         Contraseña
                     </label>
                     <input
@@ -114,8 +115,8 @@ export const UserCard = ({
                     )}
                 </div>
 
-                <div className="grid gap-1">
-                    <label className="font-light" htmlFor="image_url">
+                <div className="relative grid gap-1">
+                    <label className="relative font-light" htmlFor="image_url">
                         Imagen URL
                     </label>
                     <input
@@ -126,8 +127,8 @@ export const UserCard = ({
                     />
                 </div>
 
-                <div className="grid gap-1">
-                    <label className="font-light" htmlFor="birthday">
+                <div className="relative grid gap-1">
+                    <label className="relative font-light" htmlFor="birthday">
                         Cumpleaños
                     </label>
                     <input
@@ -139,7 +140,7 @@ export const UserCard = ({
                 </div>
 
                 <button
-                    className="bg-blue-500 text-white p-2 px-4 uppercase font-semibold rounded-sm transition-colors hover:bg-blue-700"
+                    className="bg-[#8cff98] text-black p-2 px-4 uppercase font-semibold rounded-2xl transition-colors hover:bg-green-400"
                     type="submit"
                 >
                     {idToUserEdit ? 'Guardar Cambios' : 'Agregar Nuevo Usuario'}
