@@ -17,7 +17,7 @@ export const FilteredUser = ({
                     : 'translate-x-full z-20'
             }`}
         >
-            <article className="relative w-[min(100%,_300px)] rounded-lg overflow-hidden border-2 border-[#001c55] bg-white shadow-lg shadow-[#0a2472]">
+            <article className="relative w-[min(100%,_300px)] rounded-lg overflow-hidden border-[2px] border-[#001c55] bg-white shadow-xl shadow-[#0a2472]">
                 
                     <button
                         className="absolute text-[#0a2472] top-2 right-2 transition-colors hover:text-white hover:bg-[#0a2472] rounded-lg"
@@ -26,7 +26,7 @@ export const FilteredUser = ({
                     >
                         <IconSquareRoundedX />
                     </button>
-                    <div className="pt-2 p-4 border-b-2 border-[#0a2472] rounded-b-lg">
+                    <div className="pt-2 p-4 shadow-md shadow-[#0a2472] rounded-b-lg">
                         <img
                             src={user.image_url}
                             alt=""

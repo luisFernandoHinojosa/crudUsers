@@ -38,10 +38,16 @@ export const ConfirmDeleteUser = ({
                         toast.promise(
                             deleteUser(userToDelete.id),
                              {
-                               loading: 'Eliminando usuario...',
-                               success: <b>Usuario eliminado con exito</b>,
-                               error: <b>No se puedo eliminar al usuario</b>,
-                             }
+                               loading: <b className='font-semibold text-[#00072d]'>Eliminando usuario...</b>,
+                               success: <b className='text-green-600 font-semibold'>Usuario eliminado con exito</b>,
+                               error: <b className='red-500 font-semibold'>No se puedo eliminar al usuario</b>,
+                             },
+                             
+                             {
+                                iconTheme:{
+                                    primary:'#0e6ba8'
+                                },
+                              }
                            );
                         }
                     }

@@ -12,7 +12,7 @@ import {
 import { UserList } from './components/UserList';
 import { FilteredUser } from './utils/FilteredUser';
 import { ConfirmDeleteUser } from './utils/ConfirmDeleteUser';
-import { Toaster,toast } from 'react-hot-toast';
+import { Toaster, toast } from 'react-hot-toast';
 function App() {
     //abre el modal dependiendo a su estado
     const [isShowModal, setIsShowModal] = useState(false);
@@ -28,7 +28,6 @@ function App() {
     const [filteredUser, setFilteredUser] = useState([]);
     const [confirmDeleteUser, setConfirmDeleteUser] = useState(false);
     const [userToDelete, setUserToDelete] = useState(null);
-    //const [emailError, setEmailError] = useState('')
 
     const handleOpenModal = () => {
         setIsShowModal(true);
@@ -37,32 +36,65 @@ function App() {
     const handleClosedModal = () => {
         setIsShowModal(false);
         reset(EMPTY_FORM_VALUES);
-        console.log('cerre el modal');
         setidToUserEdit(null);
     };
 
     const submit = (data) => {
         !data.image_url && (data.image_url = URL_IMAGE_DEFAULT);
-        !data.birthday && (data.birthday = null);
+
         if (idToUserEdit) {
-            updateUser(data);
             toast.promise(
-                 {
-                   loading: 'Actualizando usuario...',
-                   success: <b>Usuario actualizado con exito</b>,
-                   error: <b>No se puedo actualizar al usuario</b>,
-                 }
-               );
+                updateUser(data),
+                {
+                    loading: (
+                        <b className="font-semibold text-[#00072d]">
+                            Actualizando usuario...
+                        </b>
+                    ),
+                    success: (
+                        <b className="font-semibold text-green-600">
+                            Usuario actualizado con exito!!
+                        </b>
+                    ),
+                    error: (
+                        <b className="font-semibold text-red-500">
+                            No se pudo actualizar al usuario
+                        </b>
+                    ),
+                },
+                {
+                    iconTheme: {
+                        primary: '#0e6ba8',
+                    },
+                }
+            );
             setFilteredUser(data);
         } else {
             toast.promise(
                 createUser(data),
-                 {
-                   loading: 'Creando usuario...',
-                   success: <b>Usuario creado con exito</b>,
-                   error: <b>No se puedo crear al usuario</b>,
-                 }
-               );
+                {
+                    loading: (
+                        <b className="font-semibold text-[#00072d]">
+                            Creando usuario...
+                        </b>
+                    ),
+                    success: (
+                        <b className="font-semibold text-green-600">
+                            Usuario creado con exito!!
+                        </b>
+                    ),
+                    error: (
+                        <b className="font-semibold text-red-500">
+                            No se pudo crear al usuario
+                        </b>
+                    ),
+                },
+                {
+                    iconTheme: {
+                        primary: '#0e6ba8',
+                    },
+                }
+            );
         }
     };
 
@@ -158,7 +190,6 @@ function App() {
                 userToDelete={userToDelete}
                 setShowFilteredUser={setShowFilteredUser}
             />
-            {/* <button onClick={()=>toast.success('siiiiiiii')}>TOASTER</button> */}
             <Toaster />
         </main>
     );

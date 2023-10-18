@@ -31,3 +31,9 @@
     backdrop-filter: blur(0.2rem); 
     -webkit-backdrop-filter: blur(0.2rem); 
 }
+
+.icon::placeholder{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f007";
+}

@@ -9,7 +9,6 @@ export const UserCard = ({
     idToUserEdit,
     errors,
 }) => {
-
     return (
         <section
             className={`fixed blur-bg top-0 bottom-0 w-screen  flex justify-center items-center px-3 transform transition-transform ease-in-out duration-300 ${
@@ -32,15 +31,18 @@ export const UserCard = ({
                 </button>
 
                 <div className="relative grid">
-                    <label className="relative font-light " htmlFor="first_name">
+                    <label
+                        className="relative font-medium "
+                        htmlFor="first_name"
+                    >
                         Nombre
                     </label>
                     <input
-                        className="outline-none border-2 px-2
+                        className="icon outline-none border-2 px-2
                         py-1 rounded-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-300"
                         type="text"
                         id="first_name"
-                        autoFocus
+                        placeholder=''
                         {...register('first_name', {
                             required: {
                                 value: true,
@@ -58,22 +60,22 @@ export const UserCard = ({
                         })}
                     />
                     {errors.first_name && (
-                        <span className="text-red-500">
+                        <span className="text-red-500 absolute -bottom-1/4 text-xs">
                             {errors.first_name.message}
                         </span>
                     )}
-
                 </div>
 
                 <div className="relative grid gap-1">
-                    <label className="relative font-light" htmlFor="last_name">
+                    <label className="relative font-medium" htmlFor="last_name">
                         Apellidos
                     </label>
                     <input
-                        className="outline-none border-2 px-2 py-1 rounded-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-300"
+                        className="icon outline-none border-2 px-2 py-1 rounded-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-300"
                         type="text"
                         id="last_name"
-                        {...register('last_name',{
+                        placeholder=''
+                        {...register('last_name', {
                             required: {
                                 value: true,
                                 message: 'Campo requerido',
@@ -87,28 +89,34 @@ export const UserCard = ({
                                 value: 1,
                                 message: 'Minimo 1 caracter',
                             },
-
                         })}
                     />
                     {errors.last_name && (
-                        <span className="text-red-500">
+                        <span className="text-red-500 absolute -bottom-1/4 text-xs">
                             {errors.last_name.message}
                         </span>
                     )}
                 </div>
 
                 <div className="relative grid gap-1">
-                    <label className="relative font-light" htmlFor="email">
+                    <label className="relative font-medium" htmlFor="email">
                         Email
                     </label>
+
                     <input
                         type="text"
                         id="email"
-                        className="outline-none border-2 px-2 py-1 rounded-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-300"
+                        className="icon outline-none border-2 px-2 py-1 rounded-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-300"
+                        placeholder=''
                         {...register('email', {
+                            required: {
+                                value: true,
+                                message: 'Campo requerido',
+                            },
                             pattern: {
                                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                                message: 'Correo invalido, (caracteres necesarios "@, .com")',
+                                message:
+                                    'Correo invalido, (caracteres necesarios "@, .com")',
                             },
                             maxLength: {
                                 value: 150,
@@ -119,24 +127,24 @@ export const UserCard = ({
                                 value: 1,
                                 message: 'Minimo 1 caracter',
                             },
-
                         })}
                     />
                     {errors.email && (
-                        <span className="text-red-500">
+                        <span className="text-red-500 absolute -bottom-1/4 text-xs">
                             {errors.email.message}
                         </span>
                     )}
                 </div>
 
                 <div className="relative grid gap-1">
-                    <label className="relative font-light" htmlFor="password">
+                    <label className="relative font-medium" htmlFor="password">
                         Contraseña
                     </label>
                     <input
-                        className="outline-none border-2 px-2 py-1 rounded-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-300"
+                        className="icon outline-none border-2 px-2 py-1 rounded-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-300"
                         type="text"
                         id="password"
+                        placeholder=''
                         {...register('password', {
                             required: {
                                 value: true,
@@ -154,38 +162,50 @@ export const UserCard = ({
                         })}
                     />
                     {errors.password && (
-                        <span className="text-red-500">
+                        <span className="text-red-500 absolute -bottom-1/4 text-xs">
                             {errors.password.message}
                         </span>
                     )}
                 </div>
 
                 <div className="relative grid gap-1">
-                    <label className="relative font-light" htmlFor="image_url">
+                    <label className="relative font-medium" htmlFor="image_url">
                         Imagen URL
                     </label>
                     <input
-                        className="outline-none border-2 px-2 py-1 rounded-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-300"
+                        className="icon outline-none border-2 px-2 py-1 rounded-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-300"
                         type="text"
                         id="image_url"
+                        placeholder=''
                         {...register('image_url')}
                     />
                 </div>
 
                 <div className="relative grid gap-1">
-                    <label className="relative font-light" htmlFor="birthday">
+                    <label className="relative font-medium" htmlFor="birthday">
                         Cumpleaños
                     </label>
                     <input
                         className="outline-none border-2 px-2 py-1 rounded-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-300"
                         type="date"
                         id="birthday"
-                        {...register('birthday')}
+                        
+                        {...register('birthday', {
+                            required: {
+                                value: true,
+                                message: 'Campo requerido',
+                            },
+                        })}
                     />
+                    {errors.birthday && (
+                        <span className="text-red-500 absolute -bottom-1/4 text-xs">
+                            {errors.birthday.message}
+                        </span>
+                    )}
                 </div>
 
                 <button
-                    className="bg-[#0a2472] text-white p-2 px-4 uppercase font-semibold rounded-2xl transition-colors hover:bg-[#001c55]"
+                    className="bg-[#0a2472] text-white p-2 px-4 uppercase font-bold rounded-2xl transition-colors hover:bg-[#000] mt-2"
                     type="submit"
                 >
                     {idToUserEdit ? 'Guardar Cambios' : 'Agregar Nuevo Usuario'}
